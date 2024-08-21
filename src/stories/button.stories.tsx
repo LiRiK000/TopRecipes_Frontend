@@ -4,8 +4,7 @@ import { Button } from '../components/ui/button'
 import { action } from '@storybook/addon-actions'
 
 const meta: Meta<typeof Button> = {
-  title: 'Example/Button',
-
+  title: 'UI/Button',
   component: Button,
   args: { onClick: action('on-click') },
 }
@@ -55,7 +54,7 @@ export const DefaultSize: Story = {
   args: {
     children: 'Button',
     variant: 'default',
-    size: 'sm',
+    size: 'default',
   },
 }
 export const SmSize: Story = {

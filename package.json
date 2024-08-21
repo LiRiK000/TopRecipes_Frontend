@@ -8,10 +8,12 @@
     "start": "next start",
     "lint": "next lint",
     "test:unit": "vitest",
+    "format": "prettier -c .",
+    "format:fix": "yarn prettier --write .",
     "sb": "storybook dev -p 6006",
     "sb:build": "storybook build",
-    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
-    "test:ui": "loki test"
+    "test:ui": "loki test",
+    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",

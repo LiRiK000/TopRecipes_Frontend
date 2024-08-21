@@ -21,6 +21,8 @@ jobs:
         run: yarn install
       - name: Build for production
         run: yarn build
+      - name: Format the code
+        run: yarn format
       - name: Lint the code
         run: yarn lint
       - name: Run unit tests

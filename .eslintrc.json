@@ -11,10 +11,10 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
-    "react/react-in-jsx-scope": "off", // Not needed in Next.js
-    "prettier/prettier": "error", // Prettier formatting errors
-    "no-console": "warn", // Warnings for console.log
-    "react/prop-types": "off" // Disable prop-types if using TypeScript
+    "react/react-in-jsx-scope": "off",
+    "prettier/prettier": "error",
+    "no-console": "warn",
+    "react/prop-types": "off"
   },
   "ignorePatterns": ["node_modules/", ".next/", "out/"],
   "overrides": [
