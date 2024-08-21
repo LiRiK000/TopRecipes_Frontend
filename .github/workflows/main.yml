@@ -17,23 +17,15 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{matrix.node-version}}
-      - name: Navigate to frontend directory
-        run: cd apps/frontend
       - name: Install dependencies
         run: yarn install
-        working-directory: apps/frontend
       - name: Build for production
         run: yarn build
-        working-directory: apps/frontend
       - name: Lint the code
         run: yarn lint
-        working-directory: apps/frontend
       - name: Run unit tests
         run: yarn test:unit
-        working-directory: apps/frontend
       - name: Build Storybook
         run: yarn sb:build
-        working-directory: apps/frontend
       - name: Screenshot testing
         run: yarn test:ui:ci
-        working-directory: apps/frontend
