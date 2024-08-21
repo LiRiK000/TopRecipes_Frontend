@@ -1,0 +1,28 @@
+{
+  "extends": ["next/core-web-vitals", "plugin:storybook/recommended"],
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "rules": {
+    "react/react-in-jsx-scope": "off", // Not needed in Next.js
+    "prettier/prettier": "error", // Prettier formatting errors
+    "no-console": "warn", // Warnings for console.log
+    "react/prop-types": "off" // Disable prop-types if using TypeScript
+  },
+  "ignorePatterns": ["node_modules/", ".next/", "out/"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        // Add TypeScript-specific rules here
+      }
+    }
+  ]
+}

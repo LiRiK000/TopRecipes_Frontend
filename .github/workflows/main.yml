@@ -1,0 +1,39 @@
+name: front
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  Front:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [v22.6.0]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js ${{matrix.node-version}}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{matrix.node-version}}
+      - name: Navigate to frontend directory
+        run: cd apps/frontend
+      - name: Install dependencies
+        run: yarn install
+        working-directory: apps/frontend
+      - name: Build for production
+        run: yarn build
+        working-directory: apps/frontend
+      - name: Lint the code
+        run: yarn lint
+        working-directory: apps/frontend
+      - name: Run unit tests
+        run: yarn test:unit
+        working-directory: apps/frontend
+      - name: Build Storybook
+        run: yarn sb:build
+        working-directory: apps/frontend
+      - name: Screenshot testing
+        run: yarn test:ui:ci
+        working-directory: apps/frontend
