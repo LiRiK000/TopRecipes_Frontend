@@ -14,7 +14,8 @@
     "sb:build": "storybook build",
     "test:ui": "loki test",
     "test:ui:ok": "loki approve",
-    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static"
+    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
+    "prepare": "husky"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",
@@ -50,6 +51,7 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-storybook": "^0.8.0",
+    "husky": "^9.1.5",
     "jsdom": "^24.1.1",
     "loki": "^0.35.0",
     "postcss": "^8",
