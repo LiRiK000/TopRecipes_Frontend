@@ -78,3 +78,10 @@ export const IconSize: Story = {
     size: 'icon',
   },
 }
+export const DefaultIconSize: Story = {
+  args: {
+    children: 'Button',
+    variant: 'ghost',
+    size: 'lg',
+  }
+}
