@@ -2,20 +2,31 @@
 
 import * as axios from '@/utils/api/requests'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 
 export default function Home() {
-  const [users, setUsers] = React.useState<UserResponse>([])
+  const [users, setUsers] = React.useState<UserResponse>()
 
-  const handleClick = async () => {
-    const getUserById = await axios.getUsersId({ params: { id: 'oo' } })
-    setUsers(getUserById.data)
-    console.log(users)
+  useEffect(() => {
+    const fetchData = async () => {
+      const get = await axios.getUsersId({
+        params: { id: 'aabe6f01-0d37-4cd5-ba21-3f3986e3c5dd' },
+      })
+      setUsers(get.data)
+      return get
+    }
+
+    fetchData()
+  }, [])
+
+  if (!users?.success) {
+    return <p>Error</p>
+  } else {
+    return (
+      <div>
+        <h1>Home</h1>
+        {users && <p>{users.data.username}</p>}
+      </div>
+    )
   }
-  return (
-    <div>
-      <h1>Home</h1>
-      <button onClick={handleClick}>Click</button>
-    </div>
-  )
 }
