@@ -1,1 +1,6 @@
-echo "Hi"
+yarn build
+yarn format
+yarn lint
+yarn test:unit
+yarn sb:build
+yarn test:ui:ci
