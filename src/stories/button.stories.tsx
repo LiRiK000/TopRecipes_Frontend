@@ -83,5 +83,5 @@ export const DefaultIconSize: Story = {
     children: 'Button',
     variant: 'ghost',
     size: 'lg',
-  }
+  },
 }
