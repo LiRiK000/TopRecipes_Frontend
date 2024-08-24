@@ -1,18 +1,16 @@
-//FIXME
-
 'use client'
+
+import * as axios from '@/utils/api/requests/user'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 
 import type { RootState } from '@/store/store'
-// import { api } from '@/utils/api/instance'
-import axios from 'axios'
 import { setAuth } from '@/store/user/user.reducer'
 import { toast } from 'sonner'
 import { useRouter } from 'next/navigation'
 
-export const ClientAuthWrapper = ({
+export const ClientAuthProvider = ({
   children,
 }: {
   children: React.ReactNode
@@ -37,14 +35,7 @@ export const ClientAuthWrapper = ({
           ?.split('=')[1]
 
         if (token) {
-          const response = await axios.get(
-            'localhost:3333/api/user/checkAuth',
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            },
-          )
+          const response = await axios.checkAuth()
           if (response) {
             dispatch(setAuth(true))
             sessionStorage.setItem('isAuth', 'true')

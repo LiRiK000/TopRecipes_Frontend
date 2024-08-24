@@ -1,4 +1,4 @@
-import { ClientAuthWrapper, ReduxProvider } from '@/components/Providers'
+import { ClientAuthProvider, ReduxProvider } from '@/components/Providers'
 
 import type { Metadata } from 'next'
 import { Toaster } from '@/components/ui/sonner'
@@ -15,12 +15,12 @@ export default function MainLayout({
 }>) {
   return (
     <ReduxProvider>
-      <ClientAuthWrapper>
+      <ClientAuthProvider>
         <main>
           {children}
           <Toaster />
         </main>
-      </ClientAuthWrapper>
+      </ClientAuthProvider>
     </ReduxProvider>
   )
 }
