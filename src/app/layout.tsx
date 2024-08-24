@@ -1,7 +1,7 @@
 import './globals.css'
 
 import { Inter } from 'next/font/google'
-import { LazyMotionProvider } from '@/components/Providers'
+import { LazyMotionProvider } from '@/components/providers'
 import type { Metadata } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -17,10 +17,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html>
-      <LazyMotionProvider>
-        <body className={inter.className}>{children}</body>
-      </LazyMotionProvider>
+    <html suppressHydrationWarning>
+      <body className={inter.className}>
+        <LazyMotionProvider>{children}</LazyMotionProvider>
+      </body>
     </html>
   )
 }

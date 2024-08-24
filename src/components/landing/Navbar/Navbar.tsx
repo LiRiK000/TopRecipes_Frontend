@@ -10,6 +10,7 @@ export const Navbar = () => {
     hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0 },
   }
+
   return (
     <m.nav
       initial="hidden"
@@ -23,7 +24,7 @@ export const Navbar = () => {
         <m.li variants={variants}>About</m.li>
         <m.li variants={variants}>Features</m.li>
       </ul>
-      <NavbarBtn text="Log In" />
+      <NavbarBtn text={'Log In'} />
     </m.nav>
   )
 }

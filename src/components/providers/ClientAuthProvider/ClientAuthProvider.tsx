@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 
 import type { RootState } from '@/store/store'
-import { setAuth } from '@/store/user/user.reducer'
+import { setAuth } from '@/store/slices/user.slice'
 import { toast } from 'sonner'
 import { useRouter } from 'next/navigation'
 

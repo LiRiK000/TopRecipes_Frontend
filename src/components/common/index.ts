@@ -1,2 +1,3 @@
 export { Logo } from './Logo/Logo'
-export {} from './ThemeSwitcher/ThemeSwitcher'
+export { ModeToggle } from './ThemeSwitcher/ThemeSwitcher'
+export { Spinner as Loader } from './Loader/Loader'

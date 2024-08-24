@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { ThemeProvider } from '@/components/Providers'
+import { Navbar } from '@/components/landing'
 
 export const metadata: Metadata = {
   title: 'TopRecipes',
@@ -12,13 +12,9 @@ export default function LandingLayout({
   children: React.ReactNode
 }>) {
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme=""
-      enableSystem
-      disableTransitionOnChange
-    >
-      <main>{children}</main>
-    </ThemeProvider>
+    <>
+      <Navbar />
+      <main className="size-full">{children}</main>
+    </>
   )
 }

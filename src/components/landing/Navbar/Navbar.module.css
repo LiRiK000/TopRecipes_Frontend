@@ -3,5 +3,5 @@
 }
 
 .navList {
-  @apply flex gap-x-6 text-2xl;
+  @apply hidden gap-x-6 text-xl sm:flex md:text-2xl;
 }

@@ -1,4 +1,4 @@
-import { ClientAuthProvider, ReduxProvider } from '@/components/Providers'
+import { ClientAuthProvider, ReduxProvider } from '@/components/providers'
 
 import type { Metadata } from 'next'
 import { Toaster } from '@/components/ui/sonner'

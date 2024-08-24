@@ -9,7 +9,7 @@ export const NavbarBtn = ({ text }: { text: string }) => {
       <Button
         variant="outline"
         size="lg"
-        className="h-14 w-32 border-black bg-transparent text-xl transition hover:border-white hover:bg-[rgb(156,163,175)] hover:text-white"
+        className="hidden border-black bg-transparent text-xl transition hover:border-white hover:bg-[rgb(156,163,175)] hover:text-white sm:flex sm:h-10 sm:w-24"
       >
         <span>{text}</span>
       </Button>

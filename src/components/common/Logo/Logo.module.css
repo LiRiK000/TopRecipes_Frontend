@@ -5,5 +5,5 @@
 }
 
 .logoText {
-  @apply pl-3 font-logo-font text-5xl;
+  @apply pl-3 font-logo-font text-3xl sm:text-5xl;
 }
