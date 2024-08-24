@@ -12,9 +12,9 @@
     "format:fix": "prettier --write .",
     "sb": "storybook dev -p 6006",
     "sb:build": "storybook build",
-    "test:ui": "loki test",
-    "test:ui:ok": "loki approve",
-    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
+    "test:ui": "LOKI=true loki test",
+    "test:ui:ok": "LOKI=true loki approve",
+    "test:ui:ci": "LOKI=true loki --requireReference --reactUri=file:./storybook-static",
     "prepare": "husky",
     "pre-commit": "yarn format && yarn lint && yarn vitest --run",
     "pre-push": "yarn build && yarn format && yarn lint && yarn vitest --run && yarn sb:build && yarn test:ui:ci"
