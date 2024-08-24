@@ -1,6 +1,6 @@
 'use client'
 
-import * as axios from '@/utils/api/requests'
+import * as axios from '@/utils/api/requests/user'
 
 import React, { useEffect } from 'react'
 
@@ -9,7 +9,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const get = await axios.getUsersId({
+      const get = await axios.getUserById({
         params: { id: 'aabe6f01-0d37-4cd5-ba21-3f3986e3c5dd' },
       })
       setUsers(get.data)

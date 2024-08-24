@@ -1,11 +1,9 @@
 'use client'
 
-import { m } from 'framer-motion'
-
 import { Logo } from '../../common/Logo/Logo'
-
-import cls from './Navbar.module.css'
 import { NavbarBtn } from './NavbarBtn'
+import cls from './Navbar.module.css'
+import { m } from 'framer-motion'
 
 export const Navbar = () => {
   const variants = {

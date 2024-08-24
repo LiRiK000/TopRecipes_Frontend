@@ -5,7 +5,7 @@ import { m } from 'framer-motion'
 
 export const NavbarBtn = ({ text }: { text: string }) => {
   return (
-    <m.div initial={{ x: 200 }} animate={{ x: 0 }}>
+    <m.div initial={{ x: 400 }} animate={{ x: 0 }}>
       <Button
         variant="outline"
         size="lg"

@@ -1,3 +1,7 @@
+interface CheckAuth {
+  success: boolean
+}
+
 interface User {
   username: string
   email: string

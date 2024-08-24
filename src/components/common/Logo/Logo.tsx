@@ -1,7 +1,8 @@
+import cls from './Logo.module.css'
+import dynamic from 'next/dynamic'
 import { m } from 'framer-motion'
-import Image from 'next/image'
 
-import style from './Logo.module.css'
+const Image = dynamic(() => import('next/image'), { ssr: true })
 
 interface ILogo {
   isImage: boolean
@@ -10,7 +11,7 @@ interface ILogo {
 export const Logo = ({ isImage = true }: ILogo) => {
   return (
     <m.div
-      className={style.logoContainer}
+      className={cls.logoContainer}
       initial={{ x: -500 }}
       animate={{ x: 0 }}
       transition={{ duration: 0.3 }}
@@ -24,7 +25,7 @@ export const Logo = ({ isImage = true }: ILogo) => {
           className="pointer-events-none"
         />
       )}
-      <h1 className={style.logoText}>TopRecipes</h1>
+      <h1 className={cls.logoText}>TopRecipes</h1>
     </m.div>
   )
 }
