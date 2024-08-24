@@ -1,7 +1,5 @@
 import './globals.css'
 
-import { LazyMotion, domAnimation } from 'framer-motion'
-
 import { Inter } from 'next/font/google'
 import LazyMotionProvider from '@/components/Providers/LazyMotionProvider'
 import type { Metadata } from 'next'

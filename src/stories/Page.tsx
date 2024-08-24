@@ -2,13 +2,7 @@ import './page.css'
 
 import React from 'react'
 
-type User = {
-  name: string
-}
-
 export const Page: React.FC = () => {
-  const [user, setUser] = React.useState<User>()
-
   return (
     <article>
       <section className="storybook-page">

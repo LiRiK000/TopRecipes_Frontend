@@ -1,5 +1,6 @@
-import Image from 'next/image'
 import { m } from 'framer-motion'
+import Image from 'next/image'
+
 import style from './Logo.module.css'
 
 interface ILogo {

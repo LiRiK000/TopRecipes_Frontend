@@ -19,6 +19,9 @@
     "pre-commit": "yarn format && yarn lint && yarn vitest --run",
     "pre-push": "yarn build && yarn format && yarn lint && yarn vitest --run && yarn sb:build && yarn test:ui:ci"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css,md}": "prettier --write"
+  },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",
     "axios": "^1.7.4",
@@ -51,13 +54,19 @@
     "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^8.9.0",
     "eslint-config-next": "14.2.5",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-storybook": "^0.8.0",
+    "eslint-plugin-unused-imports": "^4.1.3",
     "husky": "^9.1.5",
     "jsdom": "^24.1.1",
+    "lint-staged": "^15.2.9",
     "loki": "^0.35.0",
     "postcss": "^8",
+    "prettier": "^3.3.3",
+    "prettier-plugin-packagejson": "^2.5.2",
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "storybook": "^8.2.9",
     "tailwindcss": "^3.4.1",
     "typescript": "^5",

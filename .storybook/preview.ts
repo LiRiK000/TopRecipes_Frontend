@@ -1,6 +1,7 @@
 import '../src/app/globals.css'
 
 import type { Preview } from '@storybook/react'
+import { framerMotionDecorator } from './framerMotionDecorator'
 
 const preview: Preview = {
   parameters: {
@@ -11,6 +12,7 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [framerMotionDecorator],
 }
 
 export default preview

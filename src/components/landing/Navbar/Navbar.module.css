@@ -1,0 +1,7 @@
+.navContainer {
+  @apply flex items-center justify-around bg-gray-400 px-2 py-6;
+}
+
+.navList {
+  @apply flex gap-x-6 text-2xl;
+}

@@ -2,13 +2,9 @@
 
 import { LazyMotion, domAnimation } from 'framer-motion'
 
-import { PropsWithChildren } from 'react'
+import type { PropsWithChildren } from 'react'
 
-export interface LazyMotionProviderProps {}
-
-const LazyMotionProvider: React.FC<
-  PropsWithChildren<LazyMotionProviderProps>
-> = ({ children }) => {
+const LazyMotionProvider: React.FC<PropsWithChildren> = ({ children }) => {
   return <LazyMotion features={domAnimation}>{children}</LazyMotion>
 }
 

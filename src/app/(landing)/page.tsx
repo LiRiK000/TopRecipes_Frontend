@@ -1,6 +1,6 @@
 'use client'
 
-import { Navbar } from '@/components/landing/Navbar'
+import { Navbar } from '@/components/landing/Navbar/Navbar'
 import React from 'react'
 
 const page = () => {
