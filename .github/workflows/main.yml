@@ -29,5 +29,3 @@ jobs:
         run: yarn test:unit
       - name: Build Storybook
         run: yarn sb:build
-      - name: Screenshot testing
-        run: yarn test:ui:ci

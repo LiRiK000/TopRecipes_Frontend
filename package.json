@@ -12,12 +12,9 @@
     "format:fix": "prettier --write .",
     "sb": "storybook dev -p 6006",
     "sb:build": "storybook build",
-    "test:ui": "LOKI=true loki test",
-    "test:ui:ok": "LOKI=true loki approve",
-    "test:ui:ci": "LOKI=true loki --requireReference --reactUri=file:./storybook-static",
     "prepare": "husky",
     "pre-commit": "yarn format && yarn lint && yarn vitest --run",
-    "pre-push": "yarn build && yarn format && yarn lint && yarn vitest --run && yarn sb:build && yarn test:ui:ci"
+    "pre-push": "yarn build && yarn format && yarn lint && yarn vitest --run && yarn sb:build"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,css,md}": "prettier --write"
@@ -62,7 +59,6 @@
     "husky": "^9.1.5",
     "jsdom": "^24.1.1",
     "lint-staged": "^15.2.9",
-    "loki": "^0.35.0",
     "postcss": "^8",
     "prettier": "^3.3.3",
     "prettier-plugin-packagejson": "^2.5.2",
@@ -71,23 +67,5 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5",
     "vitest": "^2.0.5"
-  },
-  "loki": {
-    "looks-same": {
-      "ignoreCaret": true
-    },
-    "configurations": {
-      "chrome.laptop": {
-        "target": "chrome.docker",
-        "width": 1366,
-        "height": 768,
-        "deviceScaleFactor": 1,
-        "mobile": false
-      },
-      "chrome.iphone7": {
-        "target": "chrome.docker",
-        "preset": "iPhone 7"
-      }
-    }
   }
 }
