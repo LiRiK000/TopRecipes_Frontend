@@ -5,6 +5,7 @@ import * as axios from '@/utils/api/requests/user'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 
+import { Loader } from '@/components/common'
 import type { RootState } from '@/store/store'
 import { setAuth } from '@/store/slices/user.slice'
 import { toast } from 'sonner'
@@ -61,7 +62,7 @@ export const ClientAuthProvider = ({
   }, [hydrated, isAuth, dispatch, router])
 
   if (!hydrated || !isAuth) {
-    return null
+    return <Loader />
   }
 
   return <>{children}</>

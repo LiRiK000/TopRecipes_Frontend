@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
+import { Loader } from '@/components/common'
 import { SettingsModal } from '@/components/modals'
 
 export const ModalProvider = () => {
@@ -12,7 +13,7 @@ export const ModalProvider = () => {
   }, [])
 
   if (!isMounted) {
-    return null
+    return <Loader />
   }
 
   return (

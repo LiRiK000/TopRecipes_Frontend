@@ -73,3 +73,37 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .blob {
+    @apply absolute -translate-x-1/2 -translate-y-1/2 transform rounded-full blur-[200px];
+  }
+  .blob-light {
+    @apply from-purple-600 via-pink-600 to-blue-600;
+    background: radial-gradient(circle at top, var(--tw-gradient-stops));
+    box-shadow:
+      0 0 500px rgba(255, 255, 255, 0.5),
+      0 0 400px rgba(255, 255, 255, 0.2),
+      0 0 3000px rgba(140, 69, 255);
+  }
+  .blob-dark {
+    @apply from-blue-600 via-purple-600 to-pink-600;
+    background: radial-gradient(circle at top, var(--tw-gradient-stops));
+    box-shadow:
+      0 0 500px rgba(0, 0, 0, 0.5),
+      0 0 400px rgba(0, 0, 0, 0.2),
+      0 0 3000px rgba(50, 50, 50);
+  }
+  .blob-large {
+    width: 40rem;
+    height: 40rem;
+  }
+  .blob-medium {
+    width: 30rem;
+    height: 30rem;
+  }
+  .blob-small {
+    width: 20rem;
+    height: 20rem;
+  }
+}
