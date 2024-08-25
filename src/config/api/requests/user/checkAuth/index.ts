@@ -1,3 +1,3 @@
-import { api } from '@/utils/api/instance'
+import { api } from '@/config/api/instance'
 
 export const checkAuth = async () => api.get<CheckAuth>(`/user/checkAuth`)

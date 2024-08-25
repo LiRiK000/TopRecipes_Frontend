@@ -1,6 +1,6 @@
 'use client'
 
-import * as axios from '@/utils/api/requests/user'
+import * as axios from '@/config/api/requests/user'
 
 import React, { useEffect } from 'react'
 

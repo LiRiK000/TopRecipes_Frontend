@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
-import settingSlice from './slices/settings.slice'
+import loginSlice from './slices/modals/login.slice'
+import settingSlice from './slices/modals/settings.slice'
 import userSlice from './slices/user.slice'
 
 export const store = configureStore({
   reducer: {
     user: userSlice,
     settings: settingSlice,
+    login: loginSlice,
   },
 })
 

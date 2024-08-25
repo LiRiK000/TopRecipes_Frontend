@@ -1,7 +1,13 @@
 import './globals.css'
 
+import {
+  LazyMotionProvider,
+  ModalProvider,
+  ReduxProvider,
+  ThemeProvider,
+} from '@/components/providers'
+
 import { Inter } from 'next/font/google'
-import { LazyMotionProvider } from '@/components/providers'
 import type { Metadata } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -19,7 +25,19 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning>
       <body className={inter.className}>
-        <LazyMotionProvider>{children}</LazyMotionProvider>
+        <ReduxProvider>
+          <LazyMotionProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <ModalProvider />
+              {children}
+            </ThemeProvider>
+          </LazyMotionProvider>
+        </ReduxProvider>
       </body>
     </html>
   )

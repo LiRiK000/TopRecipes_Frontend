@@ -1,5 +1,4 @@
-import { ClientAuthProvider, ReduxProvider } from '@/components/providers'
-
+import { ClientAuthProvider } from '@/components/providers'
 import type { Metadata } from 'next'
 import { Toaster } from '@/components/ui/sonner'
 
@@ -14,13 +13,11 @@ export default function MainLayout({
   children: React.ReactNode
 }>) {
   return (
-    <ReduxProvider>
-      <ClientAuthProvider>
-        <main>
-          {children}
-          <Toaster />
-        </main>
-      </ClientAuthProvider>
-    </ReduxProvider>
+    <ClientAuthProvider>
+      <main className="size-full">
+        {children}
+        <Toaster />
+      </main>
+    </ClientAuthProvider>
   )
 }

@@ -1,9 +1,0 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-
-.logoContainer {
-  @apply flex select-none items-center;
-}
-
-.logoText {
-  @apply pl-3 font-logo-font text-3xl sm:text-5xl;
-}

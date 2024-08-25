@@ -1,6 +1,6 @@
 'use client'
 
-import * as axios from '@/utils/api/requests/user'
+import * as axios from '@/config/api/requests/user'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'

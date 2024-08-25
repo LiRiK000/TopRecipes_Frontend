@@ -1,9 +1,7 @@
 'use client'
 
+import { LoginModal, SettingsModal } from '@/components/modals'
 import { useEffect, useState } from 'react'
-
-import { Loader } from '@/components/common'
-import { SettingsModal } from '@/components/modals'
 
 export const ModalProvider = () => {
   const [isMounted, setIsMounted] = useState(false)
@@ -13,12 +11,13 @@ export const ModalProvider = () => {
   }, [])
 
   if (!isMounted) {
-    return <Loader />
+    return null
   }
 
   return (
     <>
       <SettingsModal />
+      <LoginModal />
     </>
   )
 }

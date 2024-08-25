@@ -8,10 +8,10 @@ import {
 } from '@/components/ui/dialog'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { Label } from '@/components/ui/label'
-import { ModeToggle } from '../../common'
+import { Item } from './Item'
+import { ModeToggle } from '@/components/common'
 import type { RootState } from '@/store/store'
-import { closeSettings } from '@/store/slices/settings.slice'
+import { closeSettings } from '@/store/slices/modals/settings.slice'
 
 export const SettingsModal = () => {
   const dispatch = useDispatch()
@@ -23,15 +23,11 @@ export const SettingsModal = () => {
         <DialogHeader className="border-b pb-3">
           <DialogTitle className="text-lg font-medium">My settings</DialogTitle>
         </DialogHeader>
-        <div className="flex items-center justify-between">
-          <div className="flex flex-col gap-y-1">
-            <Label>Appearance</Label>
-            <span className="text-[0.8rem] text-muted-foreground">
-              Customize how TopRecipes looks on your device
-            </span>
-          </div>
-          <ModeToggle />
-        </div>
+        <Item
+          label={'Appearance'}
+          desc={'Customize how TopRecipes looks on your device'}
+          additionalComponent={<ModeToggle />}
+        />
       </DialogContent>
     </Dialog>
   )

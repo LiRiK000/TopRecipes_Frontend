@@ -4,12 +4,16 @@ import { Logo } from '../../common/Logo/Logo'
 import { NavbarBtn } from './NavbarBtn'
 import cls from './Navbar.module.css'
 import { m } from 'framer-motion'
+import { openLogin } from '@/store/slices/modals/login.slice'
+import { useDispatch } from 'react-redux'
 
 export const Navbar = () => {
   const variants = {
     hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0 },
   }
+
+  const dispatch = useDispatch()
 
   return (
     <m.nav
@@ -24,7 +28,12 @@ export const Navbar = () => {
         <m.li variants={variants}>About</m.li>
         <m.li variants={variants}>Features</m.li>
       </ul>
-      <NavbarBtn text={'Log In'} />
+      <NavbarBtn
+        onClick={() => {
+          dispatch(openLogin())
+        }}
+        text={'Log In'}
+      />
     </m.nav>
   )
 }

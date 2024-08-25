@@ -1,4 +1,4 @@
-import cls from './Logo.module.css'
+import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { m } from 'framer-motion'
 
@@ -11,21 +11,23 @@ interface ILogo {
 export const Logo = ({ isImage = true }: ILogo) => {
   return (
     <m.div
-      className={cls.logoContainer}
+      className="my-auto flex select-none items-center justify-center"
       initial={{ x: -500 }}
       animate={{ x: 0 }}
       transition={{ duration: 0.3 }}
     >
-      {isImage && (
-        <Image
-          src={'/logo/logo_b.svg'}
-          alt={'logo'}
-          width={96}
-          height={96}
-          className="pointer-events-none"
-        />
-      )}
-      <h1 className={cls.logoText}>TopRecipes</h1>
+      <Link href="/">
+        {isImage && (
+          <Image
+            src={'/logo/logo_b.svg'}
+            alt={'logo'}
+            width={96}
+            height={96}
+            className="pointer-events-none"
+          />
+        )}
+        <h1 className="pl-3 font-logo-font text-3xl sm:text-5xl">TopRecipes</h1>
+      </Link>
     </m.div>
   )
 }
