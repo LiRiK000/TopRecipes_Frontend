@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Navbar } from '@/components/landing'
+import { Navbar } from '@/components/pages/landing'
 
 export const metadata: Metadata = {
   title: 'TopRecipes',

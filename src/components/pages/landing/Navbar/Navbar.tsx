@@ -1,6 +1,6 @@
 'use client'
 
-import { Logo } from '../../common/Logo/Logo'
+import { Logo } from '../../../common/Logo/Logo'
 import { NavbarBtn } from './NavbarBtn'
 import cls from './Navbar.module.css'
 import { m } from 'framer-motion'
