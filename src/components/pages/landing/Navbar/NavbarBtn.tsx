@@ -16,7 +16,7 @@ export const NavbarBtn = ({
         variant="outline"
         size="lg"
         onClick={onClick}
-        className="hidden border-black bg-transparent text-xl transition hover:border-white hover:bg-[rgb(156,163,175)] hover:text-white sm:flex sm:h-10 sm:w-24"
+        className="hidden border-black bg-transparent text-xl transition hover:bg-black hover:text-white sm:flex sm:h-10 sm:w-24"
       >
         <span>{text}</span>
       </Button>

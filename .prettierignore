@@ -4,3 +4,4 @@ node_modules
 README.md
 vitest.config.ts
 src/components/ui
+public

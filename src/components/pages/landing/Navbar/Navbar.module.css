@@ -1,5 +1,5 @@
 .navContainer {
-  @apply flex items-center justify-around bg-gray-400 px-2 py-6;
+  @apply fixed z-[1000] flex w-full items-center justify-around bg-primary-foreground/40 px-2 py-6 backdrop-blur-md;
 }
 
 .navList {
