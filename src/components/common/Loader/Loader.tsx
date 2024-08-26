@@ -16,8 +16,12 @@ const spinnerVariants = cva('text-muted-foregraund animate-spin', {
   },
 })
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-interface SpinnerProps extends VariantProps<typeof spinnerVariants> {}
+interface SpinnerProps extends VariantProps<typeof spinnerVariants> {
+  className?: string
+}
 
-export const Spinner = ({ size, ...props }: SpinnerProps) => {
-  return <Loader className={cn(spinnerVariants({ size, ...props }))} />
+export const Spinner = ({ size, className, ...props }: SpinnerProps) => {
+  return (
+    <Loader className={cn(spinnerVariants({ size, className, ...props }))} />
+  )
 }
