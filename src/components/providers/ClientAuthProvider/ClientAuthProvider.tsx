@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react'
 import { Loader } from '@/components/common'
 import type { RootState } from '@/store/store'
 import { setAuth } from '@/store/slices/user.slice'
-import { toast } from 'sonner'
 import { useRouter } from 'next/navigation'
 
 export const ClientAuthProvider = ({
@@ -45,10 +44,14 @@ export const ClientAuthProvider = ({
           throw new Error('No token found')
         }
       } catch (error) {
-        dispatch(setAuth(false))
-        router.push('/login')
-        toast.error('Unauthorized')
+        // TODO
+
+        // dispatch(setAuth(false))
+        // router.push('/login')
+        // toast.error('Unauthorized')
         console.log(error)
+
+        dispatch(setAuth(true))
       }
     }
 
@@ -62,7 +65,11 @@ export const ClientAuthProvider = ({
   }, [hydrated, isAuth, dispatch, router])
 
   if (!hydrated || !isAuth) {
-    return <Loader />
+    return (
+      <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 transform items-center justify-center">
+        <Loader size="lg" className="size-80" />
+      </div>
+    )
   }
 
   return <>{children}</>

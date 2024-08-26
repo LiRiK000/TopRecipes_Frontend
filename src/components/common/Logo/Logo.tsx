@@ -5,10 +5,11 @@ import { m } from 'framer-motion'
 const Image = dynamic(() => import('next/image'), { ssr: true })
 
 interface ILogo {
-  isImage: boolean
+  isImage?: boolean
+  className?: string
 }
 
-export const Logo = ({ isImage = true }: ILogo) => {
+export const Logo = ({ isImage = true, className }: ILogo) => {
   return (
     <m.div
       className="my-auto flex select-none items-center justify-center"
@@ -26,7 +27,9 @@ export const Logo = ({ isImage = true }: ILogo) => {
             className="pointer-events-none"
           />
         )}
-        <h1 className="pl-3 font-logo-font text-3xl sm:text-5xl">TopRecipes</h1>
+        <h1 className={`pl-3 font-logo-font text-3xl sm:text-5xl ${className}`}>
+          TopRecipes
+        </h1>
       </Link>
     </m.div>
   )

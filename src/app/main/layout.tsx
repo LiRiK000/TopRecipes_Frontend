@@ -1,5 +1,6 @@
 import { ClientAuthProvider } from '@/components/providers'
 import type { Metadata } from 'next'
+import { Sidebar } from '@/components/pages/main'
 import { Toaster } from '@/components/ui/sonner'
 
 export const metadata: Metadata = {
@@ -14,10 +15,8 @@ export default function MainLayout({
 }>) {
   return (
     <ClientAuthProvider>
-      <main className="size-full">
-        {children}
-        <Toaster />
-      </main>
+      <Sidebar>{children}</Sidebar>
+      <Toaster />
     </ClientAuthProvider>
   )
 }
