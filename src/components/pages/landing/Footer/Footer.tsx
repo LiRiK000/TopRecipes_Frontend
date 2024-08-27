@@ -8,8 +8,8 @@ export const Footer = () => {
         <TextHoverEffect text="Recipes" automatic />
       </div>
       <div className="mx-10 flex items-center justify-between">
-        <Logo isImage={false} />
-        <span> © 2024</span>
+        <Logo />
+        <span>Made with ❤️ 2024</span>
       </div>
     </footer>
   )

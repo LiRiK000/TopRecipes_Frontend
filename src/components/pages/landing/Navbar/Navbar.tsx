@@ -29,7 +29,7 @@ export const Navbar = () => {
         animate={{ x: 0 }}
         transition={{ duration: 0.3 }}
       >
-        <Logo isImage={false} />
+        <Logo />
       </m.div>
       <ul className={cls.navList}>
         <m.li variants={variants}>Get Started</m.li>
