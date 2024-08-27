@@ -3,6 +3,7 @@
 import {
   AboutTimeLine,
   FeaturesSection,
+  Footer,
   Hero,
 } from '@/components/pages/landing'
 
@@ -14,6 +15,7 @@ const page = () => {
       <Hero />
       <FeaturesSection />
       <AboutTimeLine />
+      <Footer />
     </>
   )
 }

@@ -1,6 +1,9 @@
-import type { Config } from 'tailwindcss'
+import type { PluginAPI } from 'tailwindcss/types/config'
+import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette'
+import plugin from 'tailwindcss/plugin'
 
-const config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   darkMode: 'class',
   content: [
     './pages/**/*.{ts,tsx}',
@@ -77,7 +80,18 @@ const config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
-} satisfies Config
+  plugins: [
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    require('tailwindcss-animate'),
+    plugin(function addVariablesForColors({ addBase, theme }: PluginAPI) {
+      const allColors = flattenColorPalette(theme('colors'))
+      const newVars = Object.fromEntries(
+        Object.entries(allColors).map(([key, val]) => [`--${key}`, val]),
+      )
 
-export default config
+      addBase({
+        ':root': newVars,
+      })
+    }),
+  ],
+}
