@@ -14,7 +14,7 @@ export default function LandingLayout({
   return (
     <>
       <Navbar />
-      <main className="size-full">{children}</main>
+      <main className="flex size-full flex-col gap-y-24">{children}</main>
     </>
   )
 }

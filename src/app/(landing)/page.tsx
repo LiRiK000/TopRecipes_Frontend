@@ -1,9 +1,20 @@
 'use client'
 
-import { Hero } from '@/components/pages/landing'
+import {
+  AboutTimeLine,
+  FeaturesSection,
+  Hero,
+} from '@/components/pages/landing'
+
 import React from 'react'
 
 const page = () => {
-  return <Hero />
+  return (
+    <>
+      <Hero />
+      <FeaturesSection />
+      <AboutTimeLine />
+    </>
+  )
 }
 export default page
