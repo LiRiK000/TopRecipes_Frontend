@@ -7,7 +7,7 @@ export const Footer = () => {
       <div>
         <TextHoverEffect text="Recipes" automatic />
       </div>
-      <div className="mx-10 flex items-center justify-between">
+      <div className="m-10 flex items-center justify-between">
         <Logo />
         <span>Made with ❤️ 2024</span>
       </div>

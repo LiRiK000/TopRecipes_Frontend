@@ -1,12 +1,12 @@
+// TODO: fix navbar
 'use client'
 
-import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 import { Logo } from '../../../common/Logo/Logo'
 import { NavbarBtn } from './NavbarBtn'
 import cls from './Navbar.module.css'
 import { m } from 'framer-motion'
 import { openLogin } from '@/store/slices/modals/login.slice'
-import { openSettings } from '@/store/slices/modals/settings.slice'
 import { useDispatch } from 'react-redux'
 
 export const Navbar = () => {
@@ -22,33 +22,34 @@ export const Navbar = () => {
       initial="hidden"
       animate="visible"
       transition={{ staggerChildren: 0.3 }}
-      className={cls.navContainer}
+      className={`${cls.navContainer} flex max-w-full items-center justify-between`}
     >
       <m.div
         initial={{ x: -500 }}
         animate={{ x: 0 }}
         transition={{ duration: 0.3 }}
+        className="flex-shrink-0"
       >
         <Logo />
       </m.div>
-      <ul className={cls.navList}>
-        <m.li variants={variants}>Get Started</m.li>
-        <m.li variants={variants}>Features</m.li>
-        <m.li variants={variants}>About</m.li>
+      <ul className={`${cls.navList} flex flex-grow justify-center`}>
+        <m.li variants={variants} className="mx-4">
+          <Link href="#main">Get Started</Link>
+        </m.li>
+        <m.li variants={variants} className="mx-4">
+          <Link href="#features">Features</Link>
+        </m.li>
+        <m.li variants={variants} className="mx-4">
+          <Link href="#about">About Us</Link>
+        </m.li>
       </ul>
       <NavbarBtn
         onClick={() => {
           dispatch(openLogin())
         }}
-        text={'Log In'}
+        text={'Login'}
+        className="flex-shrink-0"
       />
-      <Button
-        onClick={() => {
-          dispatch(openSettings())
-        }}
-      >
-        OPEN SETTINGS
-      </Button>
     </m.nav>
   )
 }

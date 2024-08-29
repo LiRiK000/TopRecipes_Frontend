@@ -81,8 +81,7 @@ module.exports = {
     },
   },
   plugins: [
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    require('tailwindcss-animate'),
+    import('tailwindcss-animate'),
     plugin(function addVariablesForColors({ addBase, theme }: PluginAPI) {
       const allColors = flattenColorPalette(theme('colors'))
       const newVars = Object.fromEntries(
