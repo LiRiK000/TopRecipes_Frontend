@@ -1,36 +1,40 @@
 'use client'
 
 import { HomeIcon, SettingsIcon, User2Icon } from 'lucide-react'
-import { useCallback, useEffect, useState } from 'react'
+import {
+  setCollapsed,
+  setIsOpen,
+  setMobile,
+} from '@/store/slices/mainPage/sidebar.slice'
+import { useCallback, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import type { ReactNode } from 'react'
+import type { RootState } from '@/store/store'
 import { SidebarHeader } from './SidebarHeader'
-import SidebarItem from './SidebarItem'
+import { SidebarItem } from './SidebarItem'
 import { cn } from '@/lib/utils'
 import { openSettings } from '@/store/slices/modals/settings.slice'
-import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/navigation'
 
 export const Sidebar = ({ children }: { children: ReactNode }) => {
   const router = useRouter()
-  const [collapsed, setCollapsed] = useState(true)
-  const [mobile, setMobile] = useState(false)
-  const [isOpen, setIsOpen] = useState(false)
+  const dispatch = useDispatch()
+  const { collapsed, mobile, isOpen } = useSelector(
+    (state: RootState) => state.sidebar,
+  )
 
   const toggleSidebar = useCallback(() => {
-    setCollapsed(prev => !prev)
+    dispatch(setCollapsed(!collapsed))
     if (mobile) {
-      setIsOpen(prev => !prev)
+      dispatch(setIsOpen(!isOpen))
     }
-  }, [mobile])
+  }, [dispatch, collapsed, mobile, isOpen])
 
   const handleResize = useCallback(() => {
     const isMobile = window.innerWidth <= 640
-    setMobile(isMobile)
-    if (!isMobile) {
-      setIsOpen(false)
-    }
-  }, [])
+    dispatch(setMobile(isMobile))
+  }, [dispatch])
 
   useEffect(() => {
     handleResize()
@@ -41,13 +45,13 @@ export const Sidebar = ({ children }: { children: ReactNode }) => {
     }
   }, [handleResize])
 
-  const dispatch = useDispatch()
-
   return (
     <div className="flex min-h-screen overflow-x-hidden">
       <aside
+        onMouseEnter={() => dispatch(setCollapsed(false))}
+        onMouseLeave={() => dispatch(setCollapsed(true))}
         className={cn(
-          'fixed z-40 flex min-h-screen flex-col items-center bg-gray-900 text-white transition-all duration-300',
+          'fixed z-40 flex min-h-screen flex-col items-center bg-gray-900 text-white transition-[width] duration-300',
           collapsed ? (mobile ? 'w-12' : 'w-16') : 'w-64 items-start',
           mobile && isOpen ? 'w-full' : mobile ? 'w-12' : '',
         )}
@@ -55,8 +59,8 @@ export const Sidebar = ({ children }: { children: ReactNode }) => {
         <SidebarHeader
           mobile={mobile}
           isOpen={isOpen}
-          toggleSidebar={toggleSidebar}
           collapsed={collapsed}
+          toggleSidebar={toggleSidebar}
         />
         <nav className="mt-4 flex w-full items-center">
           <ul

@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/dialog'
 import { useDispatch, useSelector } from 'react-redux'
 
-import LoginForm from '@/components/forms/LoginForm'
+import { LoginForm } from '@/components/forms/LoginForm'
 import type { RootState } from '@/store/store'
 import { closeLogin } from '@/store/slices/modals/login.slice'
 

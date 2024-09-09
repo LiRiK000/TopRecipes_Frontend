@@ -1,11 +1,10 @@
-'use client'
-
 import React from 'react'
+import { Recipe } from '@/components/pages/main'
 
 export default function Home() {
   return (
     <div>
-      <h1>Home</h1>
+      <Recipe />
     </div>
   )
 }

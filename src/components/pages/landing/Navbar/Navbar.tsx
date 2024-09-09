@@ -1,4 +1,4 @@
-// TODO: fix navbar
+// TODO: navbar on mobile
 'use client'
 
 import Link from 'next/link'

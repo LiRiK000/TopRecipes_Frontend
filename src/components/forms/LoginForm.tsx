@@ -13,7 +13,7 @@ import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-export default function LoginForm() {
+export function LoginForm() {
   const {
     register,
     handleSubmit,

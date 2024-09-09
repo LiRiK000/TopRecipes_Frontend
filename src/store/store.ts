@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import loginSlice from './slices/modals/login.slice'
 import settingSlice from './slices/modals/settings.slice'
+import sidebarSlice from './slices/mainPage/sidebar.slice'
 import userSlice from './slices/user.slice'
 
 export const store = configureStore({
@@ -8,6 +9,7 @@ export const store = configureStore({
     user: userSlice,
     settings: settingSlice,
     login: loginSlice,
+    sidebar: sidebarSlice,
   },
 })
 
